@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖动步骤</title>
+	<link rel="stylesheet" href="../libs/bootstrap3.3.5/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="../libs/unslide/css/unslider.css">
+	<link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<a href="#" class="unslider-arrow prev">Previous slide</a>
+<a href="#" class="unslider-arrow next">Next slide</a>
+<div class="banner">
+    <ul>
+        <li><div class="step_write"></div></li>
+        <li><div class="step_write"></div></li>
+        <li><div class="step_write"></div></li>
+    </ul>
+</div>
+</body>
+<script src="../libs/jquery/jquery-1.12.2.js" type="text/javascript" charset="utf-8" ></script>
+<script src="../libs/bootstrap3.3.5/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../libs/underscore/underscore-1.7.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="../libs/unslide/js/unslider-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function() {
+		var unslider = $('.banner').unslider();
+		$('.unslider-arrow').click(function() {
+			var fn = this.className.split(' ')[1];
+
+	        //  Either do unslider.data('unslider').next() or .prev() depending on the className
+	        unslider.data('unslider')[fn]();
+		});
+	});
+</script>
+</html>
